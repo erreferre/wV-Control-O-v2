@@ -3,8 +3,8 @@
   <PropertyGroup>
     <ProjectGuid>631c5464-4b42-4c0e-90ac-f9df373a180f</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>es.aerowi.liveshowsynccontrol</AppIdentifier>
-    <ProjectName>wiVivo Control David y Taninos</ProjectName>
+    <AppIdentifier>es.aerowi.wivivocontroldavidytaninos</AppIdentifier>
+    <ProjectName>wiVivo Control David e Taninos</ProjectName>
     <IsRunnable>true</IsRunnable>
     <FrameworkVersion>3.2.0</FrameworkVersion>
     <AndroidPermissions>android.permission.CAMERA;android.permission.INTERNET;android.permission.VIBRATE;android.permission.WAKE_LOCK;android.permission.WRITE_EXTERNAL_STORAGE</AndroidPermissions>
@@ -14,9 +14,9 @@
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
     <WP8SupportedResolutions>ID_RESOLUTION_WVGA;ID_RESOLUTION_WXGA;ID_RESOLUTION_HD720P</WP8SupportedResolutions>
     <BundleVersion>11.0</BundleVersion>
-    <DisplayName>wiVivo Control DT</DisplayName>
+    <DisplayName>wiVivo Control DT DEBUG</DisplayName>
     <Author>aerowi</Author>
-    <Description>wiVivo Control DT</Description>
+    <Description>wiVivo Control DT DEBUG</Description>
     <iOSDeviceFamily>1;2</iOSDeviceFamily>
     <iOSBackgroundMode />
     <AndroidVersionCode>11</AndroidVersionCode>

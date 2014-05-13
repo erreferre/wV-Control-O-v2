@@ -40,9 +40,7 @@ function handleLogin() {
         } else {
 	        $.get(servidor_login, {username:u,password:p})
     		.done(function(data){
-        	    //alert(data);
 		    	var tmp = data;
-            	//navigator.notification.alert("resultado: ||"+tmp+"||");
             	if (tmp === '1'){
                 	window.localStorage["username"] = u;
             		window.localStorage["password"] = p;             
