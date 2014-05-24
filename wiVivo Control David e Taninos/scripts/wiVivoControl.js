@@ -3,8 +3,8 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 //variables Globales
-var servidor_wivivo = 'http://srv001.liveshowsync.local';
-//var servidor_wivivo = 'http://192.168.10.155';
+//var servidor_wivivo = 'http://srv001.liveshowsync.local';
+var servidor_wivivo = 'http://192.168.10.155';
 var webservice_wivivo = servidor_wivivo + '/liveshowsync/';
 
 var servidor_color1 = webservice_wivivo + 'actualiza_color1.php';
@@ -71,6 +71,11 @@ function ponColor1Rojo(){
     	.done(function(){alertaColor('ROJO',1);})
     	.fail(function(){falloConexion();});
 }
+function ponColor1Verde(){
+    $.get(servidor_color1, {color:"00ff00"})
+    	.done(function(){alertaColor('VERDE',1);})
+    	.fail(function(){falloConexion();});
+}
 function ponColor1Blanco(){
     $.get(servidor_color1, {color:"ffffff"})
     	.done(function(){alertaColor('BLANCO',1);})
@@ -84,6 +89,11 @@ function ponColor1Negro(){
 function ponColor2Rojo(){
     $.get(servidor_color2, {color:"ff0000"})
     	.done(function(){alertaColor('ROJO',2);})
+    	.fail(function(){falloConexion();});
+}
+function ponColor2Verde(){
+    $.get(servidor_color2, {color:"00ff00"})
+    	.done(function(){alertaColor('VERDE',2);})
     	.fail(function(){falloConexion();});
 }
 function ponColor2Blanco(){
