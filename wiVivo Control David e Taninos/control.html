@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>wiVivo Control David e Taninos - Control</title>
+    <title>wiVivo Control DT - Control</title>
     <meta charset="utf-8" />
     <link href="styles/kendo.mobile.all.min.css" rel="stylesheet" />
     <link href="styles/kendo.mobile.wiVivoControlDavyTan1.css" rel="stylesheet" />
     <link href="styles/wiVivoControl.css" rel="stylesheet" />
-
     <script type="text/javascript" src="scripts/wiVivoControl.js"></script>
     <script src="cordova.js"></script>
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/kendo.mobile.min.js"></script>
     <script src="scripts/app.js"></script>
 </head>
+
 <body>
     <!--Home-->
     <div id="tabstrip-fogar" data-role="view" data-title="comandos">
@@ -22,50 +23,49 @@
             <table width=100%>
                 <tr>
                     <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaShow()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>COMEZA O SHOW!!</h1>activa botons dos espectadores<h3>
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>ACTIVA O SHOW</h1>activa botons na app dos espectadores<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                     <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaShow()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>DESACTIVA SHOW!!</h1>desactiva apps espectadores<h3>
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>DESACTIVA O SHOW</h1>desactiva botons<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                 </tr><tr>
                     <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaGuapo()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>lector de mentes ON</h1>soará Guapo<h3>
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONA "GUAPO!"</h1>soará "guapo" nos moviles<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaGuapo()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>lector de mentes OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
+<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaGuapo()">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONA GUAPO! OFF</h1>(opcional)<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
                 </tr><tr>
                     <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaAplauso()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>comodidade ON</h1>soarán aplausos<h3>
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONAN APLAUSOS</h1>soarán aplausos nos moviles<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaAplauso()">
+<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaAplauso()">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>comodidade OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-                </tr><tr>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
+<!--                </tr><tr>
                     <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaSelfie1()">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 1 ON</h1>mostra foto comprometida<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                     <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaSelfie1()">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 1 OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
                 </tr><tr>
                     <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaSelfie2()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 2 ON</h1>fai fotos<h3>
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>ACTIVA SELFIES</h1>mostra as fotos que fagas<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaSelfie2()">
+<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaSelfie2()">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 2 OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
                 </tr>
             </table>
         	</font>
         </div>
         <font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
-	</div>
-
+    </div>
     <div id="tabstrip-selfie" data-role="view" data-title="selfie">
         <div class="view-content">
-		<!--Saca foto y la sube al servidor-->
-	        <font color="black">
+            <!--Saca foto y la sube al servidor-->
+            <font color="black">
             <h2>VELAZQUEZ 2</h2>
     		<p><button class="boton-negro boton-centro boton-text-all-color" onclick="captureImage()">
         	    <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>Saca foto</h1><h3><br/>::::::::::::::::::::::::::::<br/></h3></button></p>
@@ -73,10 +73,9 @@
         	<div id="rutasubida"></div>
     		<img style="display:none;margin:10px auto; width:80%;" id="smallImage" src="" />
         	</font>
-        </div>  
-    	<font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
+        </div>
+        <font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
     </div>
-
     <div id="tabstrip-colorines" data-role="view" data-title="colorines">
         <div class="view-content">
             <font color="black">
@@ -116,11 +115,10 @@
                 </tr>
             </table>
             </font>
-        </div>  
-    	<font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
+        </div>
+        <font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
     </div>
-
-    <div id="tabstrip-admin" data-role="view" data-title="admin">
+    <!--<div id="tabstrip-admin" data-role="view" data-title="admin">
         <div class="view-content">
             <font color="black">
             <h2>ADMINISTRADOR</h2>
@@ -140,8 +138,7 @@
         	</font>
         </div>
         <font color="black"><div data-role="view"><p>&copy; aerowi.es 2014</p></div></font>
-	</div>
-    
+    </div>-->
     <!--Layout-->
     <div data-role="layout" data-id="tabstrip-layout">
         <!--Header-->
@@ -154,11 +151,12 @@
         <div data-role="footer">
             <div data-role="tabstrip">
                 <a href="#tabstrip-fogar" data-icon="action">Comandos</a>
-                <a href="#tabstrip-selfie" data-icon="camera">Velázquez</a>
+                <a href="#tabstrip-selfie" data-icon="camera">Fotos</a>
                 <a href="#tabstrip-colorines" data-icon="compose">Colorines</a>
-                <a href="#tabstrip-admin" data-icon="contacts">Admin</a>
+                <!--<a href="#tabstrip-admin" data-icon="contacts">Admin</a>-->
             </div>
         </div>
     </div>
 </body>
+
 </html>

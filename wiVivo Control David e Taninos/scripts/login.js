@@ -4,9 +4,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //}
 
 //variables Globales
-var servidor_wivivo_login = 'http://srv001.liveshowsync.local';
-//var servidor_wivivo_login = 'http://192.168.10.155';
-var webservice_wivivo_login = servidor_wivivo_login + '/liveshowsync/'; 
+//var servidor_wivivo_login = 'http://srv001.liveshowsync.local';
+var servidor_wivivo_login = 'http://aerowi.ddns.net';
+var webservice_wivivo_login = servidor_wivivo_login + '/david/'; 
 var servidor_login = webservice_wivivo_login + 'login.php';
 
 function onDeviceReady() {

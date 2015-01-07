@@ -3,9 +3,9 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 //variables Globales
-var servidor_wivivo = 'http://srv001.liveshowsync.local';
-//var servidor_wivivo = 'http://192.168.10.155';
-var webservice_wivivo = servidor_wivivo + '/liveshowsync/';
+//var servidor_wivivo = 'http://srv001.liveshowsync.local';
+var servidor_wivivo = 'http://aerowi.ddns.net';
+var webservice_wivivo = servidor_wivivo + '/david/';
 
 var servidor_color1 = webservice_wivivo + 'actualiza_color1.php';
 var servidor_color2 = webservice_wivivo + 'actualiza_color2.php';
