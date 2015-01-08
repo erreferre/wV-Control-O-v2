@@ -7,26 +7,28 @@ document.addEventListener("deviceready", onDeviceReady, false);
 var servidor_wivivo = 'http://aerowi.ddns.net';
 var webservice_wivivo = servidor_wivivo + '/david/';
 
-var servidor_color1 = webservice_wivivo + 'actualiza_color1.php';
-var servidor_color2 = webservice_wivivo + 'actualiza_color2.php';
-var servidor_intermitencia = webservice_wivivo + 'actualiza_intermitencia.php';
-var servidor_activa_guapo = webservice_wivivo + 'activa_guapo.php';
-var servidor_desactiva_guapo = webservice_wivivo + 'desactiva_guapo.php';
-var servidor_activa_aplauso = webservice_wivivo + 'activa_aplauso.php';
-var servidor_desactiva_aplauso = webservice_wivivo + 'desactiva_aplauso.php';
-var servidor_activa_selfie1 = webservice_wivivo + 'activa_selfie1.php';
-var servidor_desactiva_selfie1 = webservice_wivivo + 'desactiva_selfie.php';
-var servidor_activa_selfie2 = webservice_wivivo + 'activa_selfie2.php';
-var servidor_desactiva_selfie2 = webservice_wivivo + 'desactiva_selfie.php';
+var actualiza_wivivo = webservice_wivivo + 'actualiza_wivivo.php';
+
+//var servidor_color1 = webservice_wivivo + 'actualiza_color1.php';
+//var servidor_color2 = webservice_wivivo + 'actualiza_color2.php';
+//var servidor_intermitencia = webservice_wivivo + 'actualiza_intermitencia.php';
+//var servidor_activa_guapo = webservice_wivivo + 'activa_guapo.php';
+//var servidor_desactiva_guapo = webservice_wivivo + 'desactiva_guapo.php';
+//var servidor_activa_aplauso = webservice_wivivo + 'activa_aplauso.php';
+//var servidor_desactiva_aplauso = webservice_wivivo + 'desactiva_aplauso.php';
+//var servidor_activa_selfie1 = webservice_wivivo + 'activa_selfie1.php';
+//var servidor_desactiva_selfie1 = webservice_wivivo + 'desactiva_selfie.php';
+//var servidor_activa_selfie2 = webservice_wivivo + 'activa_selfie2.php';
+//var servidor_desactiva_selfie2 = webservice_wivivo + 'desactiva_selfie.php';
 
 var servidor_lee = webservice_wivivo + 'lee.php';
 var servidor_sube = webservice_wivivo + 'sube.php';
 var servidor_thumb = webservice_wivivo + 'creaThumbImagen.php';
 
-var servidor_activa_show = webservice_wivivo + 'activa_show.php';
-var servidor_activa_showempezado = webservice_wivivo + 'activa_showempezado.php';
-var servidor_desactiva_show = webservice_wivivo + 'desactiva_show.php';
-var servidor_desactiva_showempezado = webservice_wivivo + 'desactiva_showempezado.php';
+//var servidor_activa_show = webservice_wivivo + 'activa_show.php';
+//var servidor_activa_showempezado = webservice_wivivo + 'activa_showempezado.php';
+//var servidor_desactiva_show = webservice_wivivo + 'desactiva_show.php';
+//var servidor_desactiva_showempezado = webservice_wivivo + 'desactiva_showempezado.php';
 var servidor_activa_alertas = webservice_wivivo + 'activa_alertas.php';
 var servidor_desactiva_alertas = webservice_wivivo + 'desactiva_alertas.php';
 
@@ -55,9 +57,6 @@ function leeConfiguracion() {
 }
 
 //ALERTAS
-function alertaColor(color,i){
-    navigator.notification.alert(color,function(){},"COLOR"+i,"OK");
-}
 function alertaComando(mensaje,titulo){
     navigator.notification.alert(mensaje,function(){},titulo,"OK");
 }
@@ -65,65 +64,10 @@ function falloConexion(){
 	navigator.notification.alert("Proba de novo, non dei executado a acción",function(){},"ERRO DE COMUNICACION","OK");    
 }
 
-//COLORES
-function ponColor1Rojo(){
-    $.get(servidor_color1, {color:"ff0000"})
-    	.done(function(){alertaColor('ROJO',1);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor1Verde(){
-    $.get(servidor_color1, {color:"00ff00"})
-    	.done(function(){alertaColor('VERDE',1);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor1Blanco(){
-    $.get(servidor_color1, {color:"ffffff"})
-    	.done(function(){alertaColor('BLANCO',1);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor1Negro(){
-    $.get(servidor_color1, {color:"000000"})
-    	.done(function(){alertaColor('NEGRO',1);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor2Rojo(){
-    $.get(servidor_color2, {color:"ff0000"})
-    	.done(function(){alertaColor('ROJO',2);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor2Verde(){
-    $.get(servidor_color2, {color:"00ff00"})
-    	.done(function(){alertaColor('VERDE',2);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor2Blanco(){
-    $.get(servidor_color2, {color:"ffffff"})
-    	.done(function(){alertaColor('BLANCO',2);})
-    	.fail(function(){falloConexion();});
-}
-function ponColor2Negro(){
-    $.get(servidor_color2, {color:"000000"})
-    	.done(function(){alertaColor('NEGRO',2);})
-    	.fail(function(){falloConexion();});
-}
-
-//INTERMITENCIA
-function intermitenciaNula(){
-    $.get(servidor_intermitencia, {intermitencia:"0"})
-    	.done(function(){alertaComando("NULA","INTERMITENCIA");})
-    	.fail(function(){falloConexion();});
-}
-
-function intermitenciaAlta(){
-    $.get(servidor_intermitencia, {intermitencia:"2"})
-    	.done(function(){alertaComando("ALTA","INTERMITENCIA");})
-    	.fail(function(){falloConexion();});
-}
-
-//BENGALA
-function activaBengala(){
-    $.get(servidor_intermitencia, {intermitencia:"3"})
-    	.done(function(){alertaComando("ACTIVADA","BENGALA");})
+//ACTUALIZA
+function actualiza_tabla(variable,valor){
+    $.get(actualiza_wivivo, {variable:variable,valor:valor})
+    	.done(function(){alertaComando(valor,variable);})
     	.fail(function(){falloConexion();});
 }
 
@@ -133,7 +77,7 @@ function activaShow(){
         'se premes SI, comeza todo!'
         , function(data) {
             if (data === 2) {
-                $.get(servidor_activa_show)
+                $.get(actualiza_wivivo, {variable:"comienzashow",valor:"1"})
     			.done(function(){
 		    		alertaComando("ESPECTÁCULO ARRINCADO!!","SHOW");
 					activaShowEmpezadosetTimeout = setTimeout(activaShowEmpezado,300000);
@@ -147,12 +91,12 @@ function activaShow(){
     return false;
 }
 function activaShowEmpezado(){
-    $.get(servidor_activa_showempezado)
+    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"1"})
     	.done(function(){})
     	.fail(function(){falloConexion();});
 }
 function desactivaShowEmpezado(){
-    $.get(servidor_desactiva_showempezado)
+    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"0"})
     	.done(function(){})
     	.fail(function(){falloConexion();});
     if (activaShowEmpezadosetTimeout !== null) {
@@ -165,7 +109,7 @@ function desactivaShow(){
         'se premes SI, PARARÁS TODO!'
         , function(data) {
             if (data === 2) {
-                $.get(servidor_desactiva_show)
+                $.get(actualiza_wivivo, {variable:"comienzashow",valor:"0"})
     			.done(function(){
 		    		alertaComando("ESPECTÁCULO PARADO!!","SHOW");
 					desactivaShowEmpezado();
@@ -179,67 +123,76 @@ function desactivaShow(){
     return false;
 }
 
-function activaGuapo(){
-    $.get(servidor_activa_guapo)
-    .done(function(){
-        alertaComando("ACTIVADO","GUAPO");
-        desactivaGuaposetTimeout = setTimeout(desactivaGuapo,120000);
-	})
-    .fail(function(){falloConexion();});
-}
-function desactivaGuapo(){
-    $.get(servidor_desactiva_guapo)
-    .done(function(){
-        if (desactivaGuaposetTimeout !== null) {
-        	clearTimeout(desactivaGuaposetTimeout);
-        	desactivaGuaposetTimeout = null;
-    	}
-        alertaComando("DESACTIVADO","GUAPO");
-    })
-    .fail(function(){falloConexion();});
+function activa_loteria(){
+        $.get(actualiza_wivivo, {variable:"lotoactivada",valor:"1"})
+    	.done(function(){alertaComando("1","lotoactivada");})
+    	.fail(function(){falloConexion();});
+        $.get(actualiza_wivivo, {variable:"loto",valor:"1"})
+    	.done(function(){})
+    	.fail(function(){falloConexion();});
 }
 
-function activaAplauso(){
-    $.get(servidor_activa_aplauso)
-    .done(function(){
-        alertaComando("ACTIVADO","APLAUSO");
-        desactivaAplausosetTimeout = setTimeout(desactivaAplauso,120000);
-	})
-    .fail(function(){falloConexion();});
-}
-function desactivaAplauso(){
-    $.get(servidor_desactiva_aplauso)
-    .done(function(){
-        if (desactivaAplausosetTimeout !== null) {
-        	clearTimeout(desactivaAplausosetTimeout);
-        	desactivaAplausosetTimeout = null;
-    	}
-        alertaComando("DESACTIVADO","APLAUSO");
-    })
-    .fail(function(){falloConexion();});
-}
+//function activaGuapo(){
+//    $.get(servidor_activa_guapo)
+//    .done(function(){
+//        alertaComando("ACTIVADO","GUAPO");
+//        desactivaGuaposetTimeout = setTimeout(desactivaGuapo,120000);
+//	})
+//    .fail(function(){falloConexion();});
+//}
+//function desactivaGuapo(){
+//    $.get(servidor_desactiva_guapo)
+//    .done(function(){
+//        if (desactivaGuaposetTimeout !== null) {
+//        	clearTimeout(desactivaGuaposetTimeout);
+//        	desactivaGuaposetTimeout = null;
+//    	}
+//        alertaComando("DESACTIVADO","GUAPO");
+//    })
+//    .fail(function(){falloConexion();});
+//}
 
-function activaSelfie1(){
-    $.get(servidor_activa_selfie1)
-    .done(function(){alertaComando("ACTIVADO","SELFIE1");})
-    .fail(function(){falloConexion();});
-}
-function desactivaSelfie1(){
-    $.get(servidor_desactiva_selfie1)
-    .done(function(){alertaComando("DESACTIVADO","SELFIE1");})
-    .fail(function(){falloConexion();});
-}
+//function activaAplauso(){
+//    $.get(servidor_activa_aplauso)
+//    .done(function(){
+//        alertaComando("ACTIVADO","APLAUSO");
+//        desactivaAplausosetTimeout = setTimeout(desactivaAplauso,120000);
+//	})
+//    .fail(function(){falloConexion();});
+//}
+//function desactivaAplauso(){
+//    $.get(servidor_desactiva_aplauso)
+//    .done(function(){
+//        if (desactivaAplausosetTimeout !== null) {
+//        	clearTimeout(desactivaAplausosetTimeout);
+//        	desactivaAplausosetTimeout = null;
+//    	}
+//        alertaComando("DESACTIVADO","APLAUSO");
+//    })
+//    .fail(function(){falloConexion();});
+//}
 
-function activaSelfie2(){
-    $.get(servidor_activa_selfie2)
-    .done(function(){alertaComando("ACTIVADO","SELFIE2");})
-    .fail(function(){falloConexion();});
-}
-function desactivaSelfie2(){
-    $.get(servidor_desactiva_selfie2)
-    .done(function(){alertaComando("DESACTIVADO","SELFIE2");})
-    .fail(function(){falloConexion();});
-}
+//function activaSelfie1(){
+//    $.get(servidor_activa_selfie1)
+//    .done(function(){alertaComando("ACTIVADO","SELFIE1");})
+//    .fail(function(){falloConexion();});
+//}
+//function desactivaSelfie1(){
+//    $.get(servidor_desactiva_selfie1)
+//    .done(function(){alertaComando("DESACTIVADO","SELFIE1");})
+//    .fail(function(){falloConexion();});
+//}
+
+//function activaSelfie2(){
+//    $.get(servidor_activa_selfie2)
+//    .done(function(){alertaComando("ACTIVADO","SELFIE2");})
+//    .fail(function(){falloConexion();});
+//}
+//function desactivaSelfie2(){
+//    $.get(servidor_desactiva_selfie2)
+//    .done(function(){alertaComando("DESACTIVADO","SELFIE2");})
+//    .fail(function(){falloConexion();});
+//}
 
 //ADMIN
 function activaAlertas(){
@@ -289,8 +242,8 @@ function uploadPhoto(mediaFile) {
 	options.headers = {Connection: "close"};
     var path = mediaFile.fullPath;
     var params = {};
-    params.value1 = "Show David e Taninos";
-    params.value2 = "davytan";
+    params.value1 = "Show DT";
+    params.value2 = "DT";
     options.params = params;
     var ft = new FileTransfer();
     ft.upload(path, servidor_sube, uploadSuccess, uploadError, options, true);

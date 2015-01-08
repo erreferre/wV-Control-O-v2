@@ -29,33 +29,40 @@
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>DESACTIVA O SHOW</h1>desactiva botons<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                 </tr><tr>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaGuapo()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('guapoactivado','1')">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONA "GUAPO!"</h1>soará "guapo" nos moviles<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaGuapo()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONA GUAPO! OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('guapoactivado','0')">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>"GUAPO!" OFF</h1>(opcional)<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                 </tr><tr>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaAplauso()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('aplausoactivado','1')">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SONAN APLAUSOS</h1>soarán aplausos nos moviles<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaAplauso()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>comodidade OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('aplausoactivado','0')">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>APLAUSOS OFF</h1>(opcional)<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
 <!--                </tr><tr>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaSelfie1()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('tiposelfie','1')">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 1 ON</h1>mostra foto comprometida<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaSelfie1()">
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('tiposelfie','0')">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 1 OFF</h1>(opcional)<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
                 </tr><tr>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaSelfie2()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activa_loteria()">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>ACTIVA LOTERIA</h1>activa loteria<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('lotoactivada','0')">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>DESACTIVA LOTERIA</h1>desactiva loteria<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
+                </tr><tr>
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('tiposelfie','2')">
                         <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>ACTIVA SELFIES</h1>mostra as fotos que fagas<h3>
                         <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
-<!--                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="desactivaSelfie2()">
-                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>velázquez 2 OFF</h1>(opcional)<h3>
-                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>-->
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('tiposelfie','0')">
+                        <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>SELFIES OFF</h1>(opcional)<h3>
+                        <br/>::::::::::::::::::::::::::::<br/></h3></button></td>
                 </tr>
             </table>
         	</font>
@@ -66,7 +73,7 @@
         <div class="view-content">
             <!--Saca foto y la sube al servidor-->
             <font color="black">
-            <h2>VELAZQUEZ 2</h2>
+            <h2>FOTOS PARA SELFIES</h2>
     		<p><button class="boton-negro boton-centro boton-text-all-color" onclick="captureImage()">
         	    <h3><br/>::::::::::::::::::::::::::::<br/></h3><h1>Saca foto</h1><h3><br/>::::::::::::::::::::::::::::<br/></h3></button></p>
         	<div id="rutafoto"></div>
@@ -83,22 +90,22 @@
             <h2>COLOR 1</h2>
             <table width=100%>
                 <tr>
-                    <td><button class="boton-morado boton-centro boton-text-all-color" type="button" onclick="ponColor1Rojo()">
+                    <td><button class="boton-morado boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color1','#ff0000')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="ponColor1Negro()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color1','#000000')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="ponColor1Blanco()">
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color1','#ffffff')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
                 </tr>
             </table>
             <h2>COLOR 2</h2>
             <table width=100%>
                 <tr>
-                    <td><button class="boton-morado boton-centro boton-text-all-color" type="button" onclick="ponColor2Rojo()">
+                    <td><button class="boton-morado boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color2','#ff0000')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="ponColor2Negro()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color2','#000000')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
-                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="ponColor2Blanco()">
+                    <td><button class="boton-blanco boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('color2','#ffffff')">
                         <h3><br/>::::::::::::::<br/>::::::::::::::<br/>::::::::::::::<br/><br/></h3></button></td>
                 </tr>
             </table>
@@ -106,11 +113,11 @@
             <h2>INTERMITENCIA</h2>
             <table width=100%>
                 <tr>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="intermitenciaNula()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('intermitencia','0')">
                         <br/><h1> 0 </h1><br/></button></td>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="intermitenciaAlta()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('intermitencia','2')">
                         <br/><h1>> ></h1><br/></button></td>
-                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="activaBengala()">
+                    <td><button class="boton-negro boton-centro boton-text-all-color" type="button" onclick="actualiza_tabla('intermitencia','3')">
                         <br/><h1>BENGALA</h1><br/></button></td>
                 </tr>
             </table>
