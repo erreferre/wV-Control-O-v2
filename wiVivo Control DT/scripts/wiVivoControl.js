@@ -44,7 +44,6 @@ function onDeviceReady() {
     window.plugins.powerManagement.acquire();
     //CAMBIAR CUANDO SEA LA VERSION RELEASE
     document.addEventListener("menubutton", exitAppPopup, false);
-    //document.addEventListener("backbutton", atrasApp, false);
     document.addEventListener("backbutton", exitAppPopup, false);
     leeConfiguracion();
 }
@@ -286,11 +285,4 @@ function exitAppPopup() {
         , 'Pois non, Pois si'
     );  
     return false;
-}
-
-function irSelfie(){
-    location.href='control.html#tabstrip-selfie';
-}    
-function atrasApp(){
-	location.href='control.html#tabstrip-fogar';
 }
