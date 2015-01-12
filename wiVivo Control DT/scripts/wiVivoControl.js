@@ -5,30 +5,14 @@ document.addEventListener("deviceready", onDeviceReady, false);
 //variables Globales
 //var servidor_wivivo = 'http://srv001.liveshowsync.local';
 var servidor_wivivo = 'http://aerowi.ddns.net';
-var webservice_wivivo = servidor_wivivo + '/david/';
+var webservice_wivivo = servidor_wivivo + '/olympus/';
 
 var actualiza_wivivo = webservice_wivivo + 'actualiza_wivivo.php';
-
-//var servidor_color1 = webservice_wivivo + 'actualiza_color1.php';
-//var servidor_color2 = webservice_wivivo + 'actualiza_color2.php';
-//var servidor_intermitencia = webservice_wivivo + 'actualiza_intermitencia.php';
-//var servidor_activa_guapo = webservice_wivivo + 'activa_guapo.php';
-//var servidor_desactiva_guapo = webservice_wivivo + 'desactiva_guapo.php';
-//var servidor_activa_aplauso = webservice_wivivo + 'activa_aplauso.php';
-//var servidor_desactiva_aplauso = webservice_wivivo + 'desactiva_aplauso.php';
-//var servidor_activa_selfie1 = webservice_wivivo + 'activa_selfie1.php';
-//var servidor_desactiva_selfie1 = webservice_wivivo + 'desactiva_selfie.php';
-//var servidor_activa_selfie2 = webservice_wivivo + 'activa_selfie2.php';
-//var servidor_desactiva_selfie2 = webservice_wivivo + 'desactiva_selfie.php';
 
 var servidor_lee = webservice_wivivo + 'lee.php';
 var servidor_sube = webservice_wivivo + 'sube.php';
 var servidor_thumb = webservice_wivivo + 'creaThumbImagen.php';
 
-//var servidor_activa_show = webservice_wivivo + 'activa_show.php';
-//var servidor_activa_showempezado = webservice_wivivo + 'activa_showempezado.php';
-//var servidor_desactiva_show = webservice_wivivo + 'desactiva_show.php';
-//var servidor_desactiva_showempezado = webservice_wivivo + 'desactiva_showempezado.php';
 var servidor_activa_alertas = webservice_wivivo + 'activa_alertas.php';
 var servidor_desactiva_alertas = webservice_wivivo + 'desactiva_alertas.php';
 
@@ -131,68 +115,6 @@ function activa_loteria(){
     	.fail(function(){falloConexion();});
 }
 
-//function activaGuapo(){
-//    $.get(servidor_activa_guapo)
-//    .done(function(){
-//        alertaComando("ACTIVADO","GUAPO");
-//        desactivaGuaposetTimeout = setTimeout(desactivaGuapo,120000);
-//	})
-//    .fail(function(){falloConexion();});
-//}
-//function desactivaGuapo(){
-//    $.get(servidor_desactiva_guapo)
-//    .done(function(){
-//        if (desactivaGuaposetTimeout !== null) {
-//        	clearTimeout(desactivaGuaposetTimeout);
-//        	desactivaGuaposetTimeout = null;
-//    	}
-//        alertaComando("DESACTIVADO","GUAPO");
-//    })
-//    .fail(function(){falloConexion();});
-//}
-
-//function activaAplauso(){
-//    $.get(servidor_activa_aplauso)
-//    .done(function(){
-//        alertaComando("ACTIVADO","APLAUSO");
-//        desactivaAplausosetTimeout = setTimeout(desactivaAplauso,120000);
-//	})
-//    .fail(function(){falloConexion();});
-//}
-//function desactivaAplauso(){
-//    $.get(servidor_desactiva_aplauso)
-//    .done(function(){
-//        if (desactivaAplausosetTimeout !== null) {
-//        	clearTimeout(desactivaAplausosetTimeout);
-//        	desactivaAplausosetTimeout = null;
-//    	}
-//        alertaComando("DESACTIVADO","APLAUSO");
-//    })
-//    .fail(function(){falloConexion();});
-//}
-
-//function activaSelfie1(){
-//    $.get(servidor_activa_selfie1)
-//    .done(function(){alertaComando("ACTIVADO","SELFIE1");})
-//    .fail(function(){falloConexion();});
-//}
-//function desactivaSelfie1(){
-//    $.get(servidor_desactiva_selfie1)
-//    .done(function(){alertaComando("DESACTIVADO","SELFIE1");})
-//    .fail(function(){falloConexion();});
-//}
-
-//function activaSelfie2(){
-//    $.get(servidor_activa_selfie2)
-//    .done(function(){alertaComando("ACTIVADO","SELFIE2");})
-//    .fail(function(){falloConexion();});
-//}
-//function desactivaSelfie2(){
-//    $.get(servidor_desactiva_selfie2)
-//    .done(function(){alertaComando("DESACTIVADO","SELFIE2");})
-//    .fail(function(){falloConexion();});
-//}
-
 //ADMIN
 function activaAlertas(){
     $.get(servidor_activa_alertas)
@@ -241,8 +163,8 @@ function uploadPhoto(mediaFile) {
 	options.headers = {Connection: "close"};
     var path = mediaFile.fullPath;
     var params = {};
-    params.value1 = "Show DT";
-    params.value2 = "DT";
+    params.value1 = "Show wiVivo";
+    params.value2 = "aerowi";
     options.params = params;
     var ft = new FileTransfer();
     ft.upload(path, servidor_sube, uploadSuccess, uploadError, options, true);
