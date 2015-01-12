@@ -35,7 +35,7 @@
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
   ],
-  "BundleVersion": "11.0",
+  "BundleVersion": "1.0",
   "DisplayName": "wiVivo Control DT",
   "Author": "aerowi",
   "Description": "wiVivo Control David e Taninos",
@@ -44,7 +44,7 @@
     "2"
   ],
   "iOSBackgroundMode": [],
-  "AndroidVersionCode": "11",
+  "AndroidVersionCode": "12",
   "WP8Requirements": [],
   "WP8Capabilities": [],
   "WP8TileTitle": "",
