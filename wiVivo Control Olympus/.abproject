@@ -2,7 +2,7 @@
   "ProjectGuid": "631c5464-4b42-4c0e-90ac-f9df373a180f",
   "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
   "AppIdentifier": "es.aerowi.wivivocontrololympus",
-  "ProjectName": "wiVivo Control",
+  "ProjectName": "wiVivo Control Olympus",
   "IsRunnable": "true",
   "FrameworkVersion": "3.2.0",
   "AndroidPermissions": [

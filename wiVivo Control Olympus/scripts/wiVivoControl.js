@@ -187,9 +187,9 @@ function uploadError(error) {
 
 //nombre de imagen aleatorio
 function makeId(){
-    var text = "";
+    var text = "Olympus.2015.";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-    for( var i=0; i < 3; i++ )
+    for( var i=0; i < 4; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
     return text;
 }
