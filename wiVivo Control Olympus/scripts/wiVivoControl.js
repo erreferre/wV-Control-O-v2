@@ -26,7 +26,6 @@ var desactivaAplausosetTimeout = null;
 // PhoneGap is ready
 function onDeviceReady() {
     window.plugins.powerManagement.acquire();
-    //CAMBIAR CUANDO SEA LA VERSION RELEASE
     document.addEventListener("menubutton", exitAppPopup, false);
     document.addEventListener("backbutton", exitAppPopup, false);
     leeConfiguracion();
