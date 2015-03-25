@@ -1,11 +1,7 @@
-//function init() {
 document.addEventListener("deviceready", onDeviceReady, false);
-//delete init;
-//}
 
 //variables Globales
-//var servidor_wivivo_login = 'http://srv001.liveshowsync.local';
-var servidor_wivivo_login = 'http://aerowi.ddns.net';
+var servidor_wivivo_login = 'http://aerowi-olympus.ddns.net';
 var webservice_wivivo_login = servidor_wivivo_login + '/olympus/'; 
 var servidor_login = webservice_wivivo_login + 'login.php';
 

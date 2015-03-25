@@ -3,8 +3,7 @@
 document.addEventListener("deviceready", onDeviceReady, false);
 
 //variables Globales
-//var servidor_wivivo = 'http://srv001.liveshowsync.local';
-var servidor_wivivo = 'http://aerowi.ddns.net';
+var servidor_wivivo = 'http://aerowi-olympus.ddns.net';
 var webservice_wivivo = servidor_wivivo + '/olympus/';
 
 var actualiza_wivivo = webservice_wivivo + 'actualiza_wivivo.php';
@@ -13,15 +12,15 @@ var servidor_lee = webservice_wivivo + 'lee.php';
 var servidor_sube = webservice_wivivo + 'sube.php';
 var servidor_thumb = webservice_wivivo + 'creaThumbImagen.php';
 
-var servidor_activa_alertas = webservice_wivivo + 'activa_alertas.php';
-var servidor_desactiva_alertas = webservice_wivivo + 'desactiva_alertas.php';
+//var servidor_activa_alertas = webservice_wivivo + 'activa_alertas.php';
+//var servidor_desactiva_alertas = webservice_wivivo + 'desactiva_alertas.php';
 
 var nombreFoto = null;
 
 //temporizadores
-var activaShowEmpezadosetTimeout = null;
-var desactivaGuaposetTimeout = null;
-var desactivaAplausosetTimeout = null;
+//var activaShowEmpezadosetTimeout = null;
+//var desactivaGuaposetTimeout = null;
+//var desactivaAplausosetTimeout = null;
 
 // PhoneGap is ready
 function onDeviceReady() {
@@ -34,7 +33,7 @@ function onDeviceReady() {
 function leeConfiguracion() {
     $.getJSON(servidor_lee)
     .fail(function(jqxhr, textStatus, error){
-    	navigator.notification.alert("Proba de novo, ou cerra a App, conéctate á WiFi e volve a lanza-la App",function(){},"ERRO DE COMUNICACION","OK");
+    	navigator.notification.alert("Asegúrate de estar conectado a Internet",function(){},"ERRO DE COMUNICACION","OK");
     });
 }
 
@@ -62,7 +61,7 @@ function activaShow(){
                 $.get(actualiza_wivivo, {variable:"comienzashow",valor:"1"})
     			.done(function(){
 		    		alertaComando("ESPECTÁCULO ARRINCADO!!","SHOW");
-					activaShowEmpezadosetTimeout = setTimeout(activaShowEmpezado,300000);
+					//activaShowEmpezadosetTimeout = setTimeout(activaShowEmpezado,300000);
         		})
     			.fail(function(){falloConexion();});
               }
@@ -72,59 +71,71 @@ function activaShow(){
     );  
     return false;
 }
-function activaShowEmpezado(){
-    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"1"})
-    	.done(function(){})
-    	.fail(function(){falloConexion();});
-}
-function desactivaShowEmpezado(){
-    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"0"})
-    	.done(function(){})
-    	.fail(function(){falloConexion();});
-    if (activaShowEmpezadosetTimeout !== null) {
-        clearTimeout(activaShowEmpezadosetTimeout);
-        activaShowEmpezadosetTimeout = null;
-    }
-}
+
+//function activaShowEmpezado(){
+//    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"1"})
+//    	.done(function(){})
+//    	.fail(function(){falloConexion();});
+//}
+
+//function desactivaShowEmpezado(){
+//    $.get(actualiza_wivivo, {variable:"showcomenzado",valor:"0"})
+//    	.done(function(){})
+//    	.fail(function(){falloConexion();});
+//    if (activaShowEmpezadosetTimeout !== null) {
+//        clearTimeout(activaShowEmpezadosetTimeout);
+//        activaShowEmpezadosetTimeout = null;
+//    }
+//}
+
 function desactivaShow(){
     navigator.notification.confirm(
-        'se premes SI, PARARÁS TODO!'
+        'se premes SI, FINALIZARÁS TODO!'
         , function(data) {
             if (data === 2) {
+                $.get(actualiza_wivivo, {variable:"colorines",valor:"0"});
+                $.get(actualiza_wivivo, {variable:"color1",valor:"#000000"});
+                $.get(actualiza_wivivo, {variable:"color2",valor:"#000000"});
+                $.get(actualiza_wivivo, {variable:"intermitencia",valor:"0"});
+                //actualiza_tabla('colorines','0');
+                //actualiza_tabla('color1','#000000');
+                //actualiza_tabla('color2','#000000');
+                //actualiza_tabla('intermitencia','0');
                 $.get(actualiza_wivivo, {variable:"comienzashow",valor:"0"})
     			.done(function(){
-		    		alertaComando("ESPECTÁCULO PARADO!!","SHOW");
-					desactivaShowEmpezado();
+		    		alertaComando("ESPECTÁCULO FINALIZADO!!","SHOW");
+//					desactivaShowEmpezado();
         		})
     			.fail(function(){falloConexion();});
               }
           }
-        , '¿PARA-LO SHOW?'
+        , '¿FINALIZA-LO SHOW?'
         , 'non, SI'
     );  
     return false;
 }
 
-function activa_loteria(){
-        $.get(actualiza_wivivo, {variable:"lotoactivada",valor:"1"})
-    	.done(function(){alertaComando("1","lotoactivada");})
-    	.fail(function(){falloConexion();});
-        $.get(actualiza_wivivo, {variable:"loto",valor:"1"})
-    	.done(function(){})
-    	.fail(function(){falloConexion();});
-}
+//function activa_loteria(){
+//        $.get(actualiza_wivivo, {variable:"lotoactivada",valor:"1"})
+//    	.done(function(){alertaComando("1","lotoactivada");})
+//    	.fail(function(){falloConexion();});
+//        $.get(actualiza_wivivo, {variable:"loto",valor:"1"})
+//    	.done(function(){})
+//    	.fail(function(){falloConexion();});
+//}
 
 //ADMIN
-function activaAlertas(){
-    $.get(servidor_activa_alertas)
-    	.done(function(){alertaComando("ACTIVADAS","ALERTAS");})
-    	.fail(function(){falloConexion();});
-}
-function desactivaAlertas(){
-    $.get(servidor_desactiva_alertas)
-    	.done(function(){alertaComando("DESACTIVADAS","ALERTAS");})
-    	.fail(function(){falloConexion();});    
-}
+//function activaAlertas(){
+//    $.get(servidor_activa_alertas)
+//    	.done(function(){alertaComando("ACTIVADAS","ALERTAS");})
+//    	.fail(function(){falloConexion();});
+//}
+
+//function desactivaAlertas(){
+//    $.get(servidor_desactiva_alertas)
+//    	.done(function(){alertaComando("DESACTIVADAS","ALERTAS");})
+//    	.fail(function(){falloConexion();});    
+//}
 
 //Fotos con "capture"
 function captureImage() {
@@ -162,8 +173,8 @@ function uploadPhoto(mediaFile) {
 	options.headers = {Connection: "close"};
     var path = mediaFile.fullPath;
     var params = {};
-    params.value1 = "Show wiVivo";
-    params.value2 = "aerowi";
+    params.value1 = "wiVivo";
+    params.value2 = "Olympus";
     options.params = params;
     var ft = new FileTransfer();
     ft.upload(path, servidor_sube, uploadSuccess, uploadError, options, true);
@@ -195,7 +206,7 @@ function makeId(){
 
 function exitAppPopup() {
     navigator.notification.confirm(
-        'visita www.aerowi.es se queres saber como fixemos esta app'
+        'Cerra-la app'
         , function(button) {
               if (button === 2) {
                   window.plugins.powerManagement.release();
